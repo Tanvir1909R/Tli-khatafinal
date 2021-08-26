@@ -1222,5 +1222,16 @@ body {
   .add_customer_header .arrow_text p {
     font-size: 18px;
   }
+  .add_customer_select {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  .add_customer_select .add_part1, .add_customer_select .add_part2 {
+    width: 50%;
+    text-align: center;
+  }
 }
 /*# sourceMappingURL=style.css.map */
