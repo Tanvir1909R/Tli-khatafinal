@@ -470,6 +470,7 @@ body {
   color: white;
   width: 160px;
   border-radius: 40px;
+  z-index: -1;
 }
 
 .customer_wrapper .add_customer i {
@@ -1228,11 +1229,62 @@ body {
     display: flex;
     -ms-flex-pack: distribute;
         justify-content: space-around;
+    padding: 10px;
+    background: #0000000d;
   }
   .add_customer_select .add_part1, .add_customer_select .add_part2 {
     width: 50%;
     text-align: center;
     font-size: 18px;
+  }
+  .input_data {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .input_data .data_input1 {
+    position: relative;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  .input_data .data_input1 input {
+    outline: none;
+    border: 1.5px solid #ddd;
+    width: 290px;
+    height: 40px;
+    border-radius: 19px;
+    padding-left: 18px;
+    font-size: 0.9rem;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+  }
+  .input_data .data_input1 input:focus + .label_name .contant_name {
+    -webkit-transform: translateY(-20px);
+            transform: translateY(-20px);
+    color: #f03030;
+    background-color: white;
+  }
+  .input_data .data_input1 input:valid ~ .label_name .contant_name {
+    -webkit-transform: translateY(-20px);
+            transform: translateY(-20px);
+  }
+  .input_data .data_input1 input:focus {
+    border: 2px solid #f03030;
+  }
+  .input_data .data_input1 span {
+    position: absolute;
+    top: 7px;
+    left: 21px;
+    font-size: 0.9rem;
+    color: #a1a1a1;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    background-color: white;
+    pointer-events: none;
   }
 }
 /*# sourceMappingURL=style.css.map */
