@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/talikhata.png">
+    <script src="https://kit.fontawesome.com/4c21d38cb0.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <title>টালিখাতা</title>
+</head>
+
+<body onload="preloder()">
+    <div class="loder"></div>
+
+    <section id="register">
+        <!------------------------- register part ------------------------------------>
+        <div class="logo">
+            <img src="images/talikhata.png" alt="">
+
+            <div class="logoDC">
+                <p>
+                    স্বাগতম! মোবাইল নম্বর দিয়ে টালিখাতায়<br>
+                    একাউন্ট তৈরি করুন
+                </p>
+            </div>
+        </div>
+
+        <div class="reg_input">
+            <div class="st_input">
+                <input class="regInput inputBusiness" type="text" required>
+                <label for="name" class="label_name">
+
+                    <span class="contant_name">ব্যাবসা প্রতিষ্ঠানের নাম</span>
+                </label>
+            </div>
+            <div class="st_input">
+                <input class="regInput inputNumber" type="number" required
+                    onkeypress="if(this.value.length == 11) return false;">
+                <label for="name" class="label_name">
+
+                    <span class="contant_name">মোবাইল নম্বর</span>
+                </label>
+            </div>
+        </div>
+
+
+        <div class="reg_net">
+            <div class="reg-button">
+                <button class="next">পরবর্তী</button>
+            </div>
+
+            <div class="reg_DC">
+                <p>পরবর্তীতে যাওয়ার নির্দেশের মাধ্যমে আপনি টালিখাতার <a href="#">শর্তাবলীতে</a> সম্মতি প্রদান করেছেন ।
+                </p>
+            </div>
+        </div>
+        <!-- ---------------------------pass section---------------- -->
+        <div class="passwordSection">
+            <div class="logo">
+                <img src="images/talikhata.png" alt="">
+
+                <div class="logoDC">
+                    <p>
+                        আপনার তথ্য সুরক্ষিত রাখতে ডিজিট PIN তৈরি করুন ।
+                    </p>
+                </div>
+            </div>
+
+            <div class="st_input">
+                <input class="regInput pin" type="password" required>
+                <label for="name" class="label_name">
+                    <span class="contant_name">পিন দিন</span>
+                </label>
+                <i id="eye1" class="fas fa-eye-slash"></i>
+            </div>
+            <div class="st_input">
+                <input class="regInput pin_again" type="password" required>
+                <label for="name" class="label_name">
+                    <span class="contant_name">পুনরায় পিন দিন</span>
+                </label>
+                <i id="eye2" class="fas fa-eye-slash"></i>
+            </div>
+
+            <div class="rege-button">
+                <button id="nischits">নিশ্চিত</button>
+            </div>
+        </div>
+    </section>
+
+    <scetion id="home_page">
+        <div class="home_header">
+            <div class="bar_wrapper">
+
+                <div class="bar">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                </div>
+                <div class="man_name">
+                    <p class="Name"></p>
+                </div>
+            </div>
+            <div class="help">
+                <i class="fas fa-question-circle"></i>
+                <p>হেল্প</p>
+            </div>
+        </div>
+
+        <div class="nav_bar1"> <!----------------------- nav bar 1--------------- -->
+            <div class="left_part">
+                <div class="nav_head">
+                    <div class="nav_name_logo"></div>
+                    <div class="nav_info">
+                        <p class="nav_info_na">reshad</p>
+                        <p class="nav_info_num">01746290304</p>
+                    </div>
+                    <div class="nav_edit">
+                        <i class="fas fa-edit"></i>
+                    </div>
+                </div>
+
+                <div class="nav_lists">
+                    <ul>
+                        <li>হোম</li>
+                        <li>শিওর ক্যাশ ওয়ালেট</li>
+                    </ul>
+                    <p>হিসাব বিবরণী</p>
+                    <ul>
+                        <li>বেচা-কেনা</li>
+                        <li>খরচ</li>
+                        <li>ক্যাশ হিসাব</li>
+                        <li>বাকি হিসাব</li>
+                    </ul>
+                    <p>অন্যান্য</p>
+                    <ul>
+                        <li>ডাটা ব্যাকআপ</li>
+                        <li>তাগাদা পাঠাই</li>
+                        <li>সেটিংস</li>
+                        <li>PIN পরিবর্তন</li>
+                        <li>রেফার করুন</li>
+                        <li>লগ-আউট</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="nav_bar_back"></div>   
+
+
+        <div class="home_body">
+            <div class="body_wrapper">
+                <div class="part1">
+                    <div class="p1icon">
+                        <i class="fas fa-user-plus"></i>
+                    </div>
+                    <div class="p1DC">
+                        <p>হিসাবের খাতা থেকে কাস্টমার ও সাপ্লায়ার যোগ করুন।</p>
+                    </div>
+                </div>
+                <div class="part2">
+                    <div class="p2icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="p2DC">
+                        <p>প্রতিটি লেনদেনে ফ্রি এসএমএস এর সুবিধা নিন।</p>
+                    </div>
+                </div>
+                <div class="part3">
+                    <div class="p3icon">
+                        <i class="far fa-clock"></i>
+                    </div>
+                    <div class="p3DC">
+                        <p>তাগাদা মেসেজ পাঠান</p>
+                    </div>
+                </div>
+                <div class="part4">
+                    <div class="p4icon">
+                        <i class="fab fa-youtube"></i>
+                    </div>
+                    <div class="p4DC">
+                        <p>ভিডিও দেখুন</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="customer_wrapper">
+                <div class="add_customer">
+                    <div class="custom_add">
+                        <i class="fas fa-user-plus"></i>
+                    </div>
+                    <div class="cu_DC">
+                        <p>কাস্টমার যোগ করি</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="add_customer_sec">
+            <div class="add_customer_header">
+                <div class="customer_sec_back">
+                    <i class="fas fa-arrow-left"></i>
+                </div>
+                <div class="arrow_text">
+                    <p>নতুন কাস্টমার/সাপ্লায়ার</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="footer_wrapper">
+                <div class="tali">
+                    <div class="tali_icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <div class="tali_text">
+                        <p>টালি</p>
+                    </div>
+                </div>
+                <div class="cash">
+                    <div class="cash_icon">
+                        <i class="far fa-money-bill-alt"></i>
+                    </div>
+                    <div class="cash_text">
+                        <p>ক্যাশ</p>
+                    </div>
+                </div>
+                <div class="inbox">
+                    <div class="inbox_icon">
+                        <i class="fas fa-inbox"></i>
+                    </div>
+                    <div class="inbox_text">
+                        <p>ইনবক্স</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </scetion>
+
+    <script src="javascript.js"></script>
+</body>
+
+</html>
