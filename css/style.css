@@ -1232,6 +1232,7 @@ body {
   .add_customer_select .add_part1, .add_customer_select .add_part2 {
     width: 50%;
     text-align: center;
+    font-size: 18px;
   }
 }
 /*# sourceMappingURL=style.css.map */
