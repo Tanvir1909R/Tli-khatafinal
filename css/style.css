@@ -1246,18 +1246,19 @@ body {
     background: #0000000d;
     margin-bottom: 20px;
   }
-  .add_customer_select .add_part1, .add_customer_select .add_part2 {
-    width: 50%;
+  .add_customer_select .add_part1 {
+    width: 150px;
     text-align: center;
-    font-size: 18px;
-    -webkit-transition: .3s;
-    transition: .3s;
   }
-  .add_customer_select .add_part1:focus, .add_customer_select .add_part2:focus {
-    color: #f03030;
-    border-bottom: 2px solid #f03030;
-    -webkit-transition: .3s;
-    transition: .3s;
+  .add_customer_select .add_part1 p {
+    width: 100%;
+  }
+  .add_customer_select .add_part2 {
+    width: 150px;
+    text-align: center;
+  }
+  .add_customer_select .add_part2 p {
+    width: 100%;
   }
   .input_data {
     display: -webkit-box;

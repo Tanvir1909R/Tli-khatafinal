@@ -188,10 +188,12 @@ navInfoNumber.innerHTML = localStorage.getItem('Number');
 
 const addCustomerBtn = document.querySelector('.add_customer');
 const addCustomerSec = document.querySelector('.add_customer_sec');
+const add_part2 = document.querySelector('.add_part2')
 console.log(addCustomerSec)
 
 addCustomerBtn.addEventListener('click',()=>{
     addCustomerSec.classList.add('add_customer_sec_active')
 });
+
 
 

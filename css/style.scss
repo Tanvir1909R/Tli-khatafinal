@@ -976,18 +976,20 @@ body {
         padding: 10px;
         background: #0000000d;
         margin-bottom: 20px;
-        .add_part1,.add_part2{
-            width: 50%;
+        .add_part1{
+            width: 150px;
             text-align: center;
-            font-size: 18px;
-            transition: .3s;
-            &:focus{
-                color: #f03030;
-                border-bottom: 2px solid #f03030;
-                transition: .3s;
+            p{
+                width: 100%;
             }
         }
-        
+        .add_part2{
+            width: 150px;
+            text-align: center;
+            p{
+                width: 100%;
+            }
+        }
     }
     .input_data{
         display: flex;
