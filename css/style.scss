@@ -966,6 +966,7 @@ body {
         height: 100%;
         z-index: 10;
         transition: all .5s ease-out;
+        overflow: scroll;
     }
     .add_customer_sec_active{
         left: 0px;        
@@ -1005,6 +1006,38 @@ body {
                 @include inputSpanDtyle()
             }
         }
+    }
+
+    .data_save_btn{
+
+        button{
+            @include buttonStyle()
+        }
+    }
+
+    .calculator{
+        display: flex;
+        flex-direction: row;
+        margin-top: 40%;
+        visibility: hidden;
+        pointer-events: none;
+        .cal_column{
+            display: flex;
+            flex-direction: column;
+            .plus{
+                height: 80px;
+            }
+            button{
+                width: 80px;
+                height: 40px;
+                font-size: 1.3rem;
+                outline: none;
+                border: 1px solid #00000017
+            }
+        }
+    }.calculator_active{
+        visibility: visible;
+        pointer-events: all;
     }
 }
 

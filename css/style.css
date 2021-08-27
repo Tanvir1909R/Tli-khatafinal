@@ -1232,6 +1232,7 @@ body {
     z-index: 10;
     -webkit-transition: all .5s ease-out;
     transition: all .5s ease-out;
+    overflow: scroll;
   }
   .add_customer_sec_active {
     left: 0px;
@@ -1308,6 +1309,53 @@ body {
     transition: 0.3s;
     background-color: white;
     pointer-events: none;
+  }
+  .data_save_btn button {
+    width: 90%;
+    background-color: #f03030;
+    color: white;
+    outline: none;
+    border: none;
+    height: 40px;
+    border-radius: 10px;
+    display: block;
+    margin: auto;
+    opacity: 0.6;
+  }
+  .calculator {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    margin-top: 40%;
+    visibility: hidden;
+    pointer-events: none;
+  }
+  .calculator .cal_column {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .calculator .cal_column .plus {
+    height: 80px;
+  }
+  .calculator .cal_column button {
+    width: 80px;
+    height: 40px;
+    font-size: 1.3rem;
+    outline: none;
+    border: 1px solid #00000017;
+  }
+  .calculator_active {
+    visibility: visible;
+    pointer-events: all;
   }
 }
 /*# sourceMappingURL=style.css.map */
