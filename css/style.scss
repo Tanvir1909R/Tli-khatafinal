@@ -363,7 +363,6 @@ body {
         color: white;
         width: 160px;
         border-radius: 40px;
-        z-index: -1;
         i {
             margin-top: 5px;
             margin-right: 7px;
@@ -958,16 +957,37 @@ body {
             }
         }
     }
+    .add_customer_sec{
+        position: fixed;
+        top: 0px;
+        left: 1500px;
+        background-color: white;
+        width: 100%;
+        height: 100%;
+        z-index: 10;
+        transition: all .5s ease-out;
+    }
+    .add_customer_sec_active{
+        left: 0px;        
+    }
     .add_customer_select{
         display: flex;
         justify-content: space-around;
         padding: 10px;
         background: #0000000d;
+        margin-bottom: 20px;
         .add_part1,.add_part2{
             width: 50%;
             text-align: center;
             font-size: 18px;
+            transition: .3s;
+            &:focus{
+                color: #f03030;
+                border-bottom: 2px solid #f03030;
+                transition: .3s;
+            }
         }
+        
     }
     .input_data{
         display: flex;

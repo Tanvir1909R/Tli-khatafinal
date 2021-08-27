@@ -470,7 +470,6 @@ body {
   color: white;
   width: 160px;
   border-radius: 40px;
-  z-index: -1;
 }
 
 .customer_wrapper .add_customer i {
@@ -1223,6 +1222,20 @@ body {
   .add_customer_header .arrow_text p {
     font-size: 18px;
   }
+  .add_customer_sec {
+    position: fixed;
+    top: 0px;
+    left: 1500px;
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    -webkit-transition: all .5s ease-out;
+    transition: all .5s ease-out;
+  }
+  .add_customer_sec_active {
+    left: 0px;
+  }
   .add_customer_select {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1231,11 +1244,20 @@ body {
         justify-content: space-around;
     padding: 10px;
     background: #0000000d;
+    margin-bottom: 20px;
   }
   .add_customer_select .add_part1, .add_customer_select .add_part2 {
     width: 50%;
     text-align: center;
     font-size: 18px;
+    -webkit-transition: .3s;
+    transition: .3s;
+  }
+  .add_customer_select .add_part1:focus, .add_customer_select .add_part2:focus {
+    color: #f03030;
+    border-bottom: 2px solid #f03030;
+    -webkit-transition: .3s;
+    transition: .3s;
   }
   .input_data {
     display: -webkit-box;
