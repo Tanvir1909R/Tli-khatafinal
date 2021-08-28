@@ -109,7 +109,6 @@ const pin = document.querySelector('.pin');
 const pinAgain = document.querySelector('.pin_again');
 const nischitBtn = document.querySelector('#nischits');
 
-
 pin.addEventListener('input',()=>{
 
     if(pin.value === pinAgain.value){
@@ -136,6 +135,12 @@ nischitBtn.addEventListener('click',()=>{
 
     localStorage.setItem('Pin',pinStore);
     localStorage.setItem('Pin',pinAgainStore);
+
+    navInfoName.innerHTML = localStorage.getItem('Name');
+    navInfoNumber.innerHTML = localStorage.getItem('Number');
+    ownerName.innerHTML = localStorage.getItem('Name');
+    let innerLogoEl = localStorage.getItem('Name').slice(0,2);
+    navNameLogo.innerHTML = innerLogoEl;
 })
 
 //-------------------------------------------------home page----------------------------------------------//
@@ -151,9 +156,7 @@ window.addEventListener('load',()=>{
         registerSec.setAttribute('style','display:block');
     }
 });
-
-ownerName.innerHTML = localStorage.getItem('Name')
-
+ownerName.innerHTML = localStorage.getItem('Name');
 //---------------------------------- left nav ----------------------------
 
 const bar = document.querySelector('.bar');
@@ -192,18 +195,37 @@ const add_part2 = document.querySelector('.add_part2')
 const customer_sec_back = document.querySelector('.customer_sec_back');
 const cal_active = document.querySelector('.cal_active');
 const calculator = document.querySelector('.calculator')
-console.log(addCustomerSec)
+
 
 addCustomerBtn.addEventListener('click',()=>{
     addCustomerSec.classList.add('add_customer_sec_active')
 });
 customer_sec_back.addEventListener('click',()=>{
-    addCustomerSec.classList.remove('add_customer_sec_active')
+    addCustomerSec.classList.remove('add_customer_sec_active');
+    calculator.classList.remove('calculator_active');
 })
 
 cal_active.addEventListener('click',()=>{
     calculator.classList.add('calculator_active');
+});
+
+
+// --------------------------------------------claculator -------------------------------------------------
+
+const numbers = document.querySelectorAll('.number');
+const claculatorDisplay = document.querySelector('.display');
+
+console.log(claculatorDisplay)
+
+let dis1 = ''
+
+numbers.forEach(num =>{
+    num.addEventListener('click', (e) =>{
+        
+        dis1 += e.target.innerText;
+        claculatorDisplay.value = dis1;
+        console.log(e.target.innerText)
+    })
+
 })
-
-
 
