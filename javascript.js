@@ -213,13 +213,17 @@ cal_active.addEventListener('click',()=>{
 // --------------------------------------------claculator -------------------------------------------------
 
 const numbers = document.querySelectorAll('.number');
-const claculatorDisplay = document.querySelector('.display');
-const oparetiors = document.querySelectorAll('.oparetor')
+let claculatorDisplay = document.querySelector('.display');
+const oparetiors = document.querySelectorAll('.oparetor');
+const allClear = document.querySelector('.all_clear');
+const deleteBtn = document.querySelector('.delete');
+const equalBtn = document.querySelector('.equal');
 
-console.log(claculatorDisplay)
 
-let dis1 = ''
+let dis1 = '';
 let dot = false;
+let result = null;
+let oparetionName = '';
 
 numbers.forEach(num =>{
     num.addEventListener('click', (e) =>{
@@ -231,15 +235,41 @@ numbers.forEach(num =>{
         }
         dis1 += e.target.innerText;
         claculatorDisplay.value = dis1;
-        console.log(e.target.innerText)
+        console.log(dis1)
     })
-
+    
 });
 
 oparetiors.forEach(opare =>{
     opare.addEventListener('click',(e)=>{
-        dis1 += e.target.innerText;
-        claculatorDisplay.value = dis1;
+        dis1 += e.target.innerText
+        claculatorDisplay.value = dis1
     })
+});
+
+function mathOparetion(){
+     
+    if(oparetionName === 'X'){
+        result = parseFloat(result) * parseFloat(dis1)
+    }
+    else if(oparetionName === '/'){
+        result = parseFloat(result) / parseFloat(dis1)
+    }
+    else if(oparetionName === '+'){
+        result = parseFloat(result) + parseFloat(dis1)
+    }
+    else if(oparetionName === '-'){
+        result = parseFloat(result) - parseFloat(dis1)
+    }
+}
+
+
+equalBtn.addEventListener('click',()=>{
+    
 })
+
+allClear.addEventListener('click',()=>{
+    dis1 = '';
+    claculatorDisplay.value = '';
+});
 
