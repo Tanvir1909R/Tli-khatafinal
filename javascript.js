@@ -214,18 +214,32 @@ cal_active.addEventListener('click',()=>{
 
 const numbers = document.querySelectorAll('.number');
 const claculatorDisplay = document.querySelector('.display');
+const oparetiors = document.querySelectorAll('.oparetor')
 
 console.log(claculatorDisplay)
 
 let dis1 = ''
+let dot = false;
 
 numbers.forEach(num =>{
     num.addEventListener('click', (e) =>{
-        
+        if(e.target.innerText === '.' && !dot){
+            dot = true
+        }
+        else if(e.target.innerText === '.' && dot){
+            return
+        }
         dis1 += e.target.innerText;
         claculatorDisplay.value = dis1;
         console.log(e.target.innerText)
     })
 
+});
+
+oparetiors.forEach(opare =>{
+    opare.addEventListener('click',(e)=>{
+        dis1 += e.target.innerText;
+        claculatorDisplay.value = dis1;
+    })
 })
 
