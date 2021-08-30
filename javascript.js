@@ -213,7 +213,7 @@ cal_active.addEventListener('click',()=>{
 // --------------------------------------------claculator -------------------------------------------------
 
 const numbers = document.querySelectorAll('.number');
-let claculatorDisplay = document.querySelector('.display');
+const Display = document.querySelector('.display');
 const oparetiors = document.querySelectorAll('.oparetor');
 const allClear = document.querySelector('.all_clear');
 const deleteBtn = document.querySelector('.delete');
@@ -225,51 +225,16 @@ let dot = false;
 let result = null;
 let oparetionName = '';
 
+
 numbers.forEach(num =>{
-    num.addEventListener('click', (e) =>{
-        if(e.target.innerText === '.' && !dot){
-            dot = true
+    num.addEventListener('click',(e)=>{
+        if (e.target.innerText === '.' && !dot){
+            dot = true;
         }
         else if(e.target.innerText === '.' && dot){
-            return
+            return;
         }
         dis1 += e.target.innerText;
-        claculatorDisplay.value = dis1;
-        console.log(dis1)
+        Display.value = dis1
     })
-    
-});
-
-oparetiors.forEach(opare =>{
-    opare.addEventListener('click',(e)=>{
-        dis1 += e.target.innerText
-        claculatorDisplay.value = dis1
-    })
-});
-
-function mathOparetion(){
-     
-    if(oparetionName === 'X'){
-        result = parseFloat(result) * parseFloat(dis1)
-    }
-    else if(oparetionName === '/'){
-        result = parseFloat(result) / parseFloat(dis1)
-    }
-    else if(oparetionName === '+'){
-        result = parseFloat(result) + parseFloat(dis1)
-    }
-    else if(oparetionName === '-'){
-        result = parseFloat(result) - parseFloat(dis1)
-    }
-}
-
-
-equalBtn.addEventListener('click',()=>{
-    
 })
-
-allClear.addEventListener('click',()=>{
-    dis1 = '';
-    claculatorDisplay.value = '';
-});
-
