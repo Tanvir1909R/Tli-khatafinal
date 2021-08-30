@@ -140,7 +140,7 @@
                         <li>সেটিংস</li>
                         <li>PIN পরিবর্তন</li>
                         <li>রেফার করুন</li>
-                        <li>লগ-আউট</li>
+                        <li class="log_out">লগ-আউট</li>
                     </ul>
                 </div>
             </div>
@@ -223,7 +223,7 @@
                 </div>
 
                 <div class="data_input1">
-                    <input class="data_input customer_number" type="text" required>
+                    <input class="data_input customer_number" type="text" onkeypress="if(this.value.length == 11) return false;" required>
                     <label for="name" class="label_name">
     
                         <span class="contant_name">মোবাইল নম্বর</span>
@@ -240,7 +240,7 @@
             </div>
 
             <div class="data_save_btn">
-                <button>নিশ্চিত</button>
+                <button class="dataSave">নিশ্চিত</button>
             </div>
 
             <div class="calculator">

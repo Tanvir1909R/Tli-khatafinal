@@ -1010,8 +1010,13 @@ body {
 
     .data_save_btn{
 
-        button{
-            @include buttonStyle()
+        .dataSave{
+            @include buttonStyle();
+            pointer-events:none;
+        }
+        .dataSaveBtn{
+            pointer-events: all;
+            opacity: 1;
         }
     }
 

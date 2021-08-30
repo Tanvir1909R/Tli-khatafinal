@@ -1310,7 +1310,7 @@ body {
     background-color: white;
     pointer-events: none;
   }
-  .data_save_btn button {
+  .data_save_btn .dataSave {
     width: 90%;
     background-color: #f03030;
     color: white;
@@ -1321,6 +1321,11 @@ body {
     display: block;
     margin: auto;
     opacity: 0.6;
+    pointer-events: none;
+  }
+  .data_save_btn .dataSaveBtn {
+    pointer-events: all;
+    opacity: 1;
   }
   .calculator {
     display: -webkit-box;

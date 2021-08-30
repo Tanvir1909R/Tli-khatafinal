@@ -143,6 +143,7 @@ const navBack = document.querySelector('.nav_bar_back');
 const navNameLogo = document.querySelector('.nav_name_logo');
 const navInfoName = document.querySelector('.nav_info_na');
 const navInfoNumber = document.querySelector('.nav_info_num');
+const logOutBtn = document.querySelector('.log_out')
 
 bar.addEventListener('click',()=>{
     navBar1.classList.add('nav_bar1_active');
@@ -165,6 +166,12 @@ else{
 }
 navInfoName.innerHTML = localStorage.getItem('Name');
 navInfoNumber.innerHTML = localStorage.getItem('Number');
+
+
+logOutBtn.addEventListener('click',()=>{
+    localStorage.clear();
+    window.location.reload();
+})
 // =---------------------------------Add customer -----------------------------------------------------= //
 
 const addCustomerBtn = document.querySelector('.add_customer');
@@ -194,7 +201,6 @@ const Display = document.querySelector('.display');
 buttons = document.querySelectorAll('.button');
 let displayValue = '';
 const Delete = document.querySelector('.delete')
-console.log(buttons)
 
 for (item of buttons){
     item.addEventListener('click',(e)=>{
@@ -224,30 +230,52 @@ for (item of buttons){
 const customerName = document.querySelector('.customer_name');
 const customerNumber = document.querySelector('.customer_number');
 const hisab = document.querySelector('.display');
+const dataSaveBtn = document.querySelector('.dataSave')
 
 
+dataSaveBtn.addEventListener('click',()=>{
+     
+    
+    let CusName = customerName.value;
+    let CusNumber = customerNumber.value;
+    let cal = hisab.value;
+    let customerData = localStorage.getItem('CustomerData');
+    if (customerData == null){
+        noteObj = [];
+    }
+    else{
+        noteObj = JSON.parse(customerData)
+    }
+    noteObj.push('Customer Name: '+CusName , 'customer Number: '+CusNumber , 'Taka: '+cal)
+    localStorage.setItem('CustomerData',JSON.stringify(noteObj));
+    customerName.value = '';
+    customerNumber.value = '';
+    hisab.value = '';
+})
+customerName.addEventListener('input',()=>{
+    if (customerName.value !== '' && customerNumber.value !== '' && hisab.value !== ''){
+        dataSaveBtn.classList.add('dataSaveBtn');
 
+    }
+    else{
+        dataSaveBtn.classList.remove('dataSaveBtn');
+    }
+});
+customerNumber.addEventListener('input',()=>{
+    if (customerName.value !== '' && customerNumber.value !== '' && hisab.value !== ''){
+        dataSaveBtn.classList.add('dataSaveBtn');
 
+    }
+    else{
+        dataSaveBtn.classList.remove('dataSaveBtn');
+    }
+});
+hisab.addEventListener('input',()=>{
+    if (customerName.value !== '' && customerNumber.value !== '' && hisab.value !== ''){
+        dataSaveBtn.classList.add('dataSaveBtn');
 
-// let name = localStorage.getItem('Name');
-    // if (name == null){
-    //     noteObj = [];
-    // }
-    // else{
-    //     noteObj = JSON.parse(name)
-    // }
-    // noteObj.push(regInput[0].value)
-    // localStorage.setItem('Name',JSON.stringify(noteObj));
-    // regInput[0].value = '';
-
-
-    // let number = localStorage.getItem('Number');
-    // if (number == null){
-    //     noteObjnu = [];
-    // }
-    // else{
-    //     noteObjnu = JSON.parse(number)
-    // }
-    // noteObjnu.push(regInput[1].value)
-    // localStorage.setItem('Number',JSON.stringify(noteObjnu));
-    // regInput[1].value = '';
+    }
+    else{
+        dataSaveBtn.classList.remove('dataSaveBtn');
+    }
+});
