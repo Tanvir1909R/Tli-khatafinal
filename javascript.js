@@ -29,28 +29,6 @@ nextBTN.addEventListener('click',()=>{
     
     // const regInput = document.querySelectorAll('.regInput');
 
-    // let name = localStorage.getItem('Name');
-    // if (name == null){
-    //     noteObj = [];
-    // }
-    // else{
-    //     noteObj = JSON.parse(name)
-    // }
-    // noteObj.push(regInput[0].value)
-    // localStorage.setItem('Name',JSON.stringify(noteObj));
-    // regInput[0].value = '';
-
-
-    // let number = localStorage.getItem('Number');
-    // if (number == null){
-    //     noteObjnu = [];
-    // }
-    // else{
-    //     noteObjnu = JSON.parse(number)
-    // }
-    // noteObjnu.push(regInput[1].value)
-    // localStorage.setItem('Number',JSON.stringify(noteObjnu));
-    // regInput[1].value = '';
 
     passSection.classList.add('passActive')
 
@@ -187,7 +165,7 @@ else{
 }
 navInfoName.innerHTML = localStorage.getItem('Name');
 navInfoNumber.innerHTML = localStorage.getItem('Number');
-// =------------------------------Add customer ---------------------= //
+// =---------------------------------Add customer -----------------------------------------------------= //
 
 const addCustomerBtn = document.querySelector('.add_customer');
 const addCustomerSec = document.querySelector('.add_customer_sec');
@@ -210,31 +188,66 @@ cal_active.addEventListener('click',()=>{
 });
 
 
-// --------------------------------------------claculator -------------------------------------------------
+// -------claculator -----------------
 
-const numbers = document.querySelectorAll('.number');
 const Display = document.querySelector('.display');
-const oparetiors = document.querySelectorAll('.oparetor');
-const allClear = document.querySelector('.all_clear');
-const deleteBtn = document.querySelector('.delete');
-const equalBtn = document.querySelector('.equal');
+buttons = document.querySelectorAll('.button');
+let displayValue = '';
+const Delete = document.querySelector('.delete')
+console.log(buttons)
 
+for (item of buttons){
+    item.addEventListener('click',(e)=>{
+        buttonText = e.target.innerText;
 
-let dis1 = '';
-let dot = false;
-let result = null;
-let oparetionName = '';
-
-
-numbers.forEach(num =>{
-    num.addEventListener('click',(e)=>{
-        if (e.target.innerText === '.' && !dot){
-            dot = true;
+        if(buttonText == 'X'){
+            buttonText = '*'
+            displayValue += buttonText
+            Display.value = displayValue;
         }
-        else if(e.target.innerText === '.' && dot){
-            return;
+        else if(buttonText == 'AC'){
+            displayValue= '';
+            Display.value = ''
         }
-        dis1 += e.target.innerText;
-        Display.value = dis1
+        else if (buttonText == '='){
+            Display.value = eval(displayValue)
+        }
+        else{
+            displayValue += buttonText
+            Display.value = displayValue;
+        }
     })
-})
+};
+
+//=--------------------------------- ADD cutomer data in localStorage--------------------------------------=
+    
+const customerName = document.querySelector('.customer_name');
+const customerNumber = document.querySelector('.customer_number');
+const hisab = document.querySelector('.display');
+
+
+
+
+
+// let name = localStorage.getItem('Name');
+    // if (name == null){
+    //     noteObj = [];
+    // }
+    // else{
+    //     noteObj = JSON.parse(name)
+    // }
+    // noteObj.push(regInput[0].value)
+    // localStorage.setItem('Name',JSON.stringify(noteObj));
+    // regInput[0].value = '';
+
+
+    // let number = localStorage.getItem('Number');
+    // if (number == null){
+    //     noteObjnu = [];
+    // }
+    // else{
+    //     noteObjnu = JSON.parse(number)
+    // }
+    // noteObjnu.push(regInput[1].value)
+    // localStorage.setItem('Number',JSON.stringify(noteObjnu));
+    // regInput[1].value = '';
