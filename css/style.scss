@@ -1012,10 +1012,6 @@ body {
 
         .dataSave{
             @include buttonStyle();
-            pointer-events:none;
-        }
-        .dataSaveBtn{
-            pointer-events: all;
             opacity: 1;
         }
     }

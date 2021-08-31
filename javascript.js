@@ -217,6 +217,7 @@ for (item of buttons){
         }
         else if (buttonText == '='){
             Display.value = eval(displayValue)
+            displayValue= '';
         }
         else{
             displayValue += buttonText
@@ -234,7 +235,12 @@ const dataSaveBtn = document.querySelector('.dataSave')
 
 
 dataSaveBtn.addEventListener('click',()=>{
-     
+    let total = hisab.value
+
+    localStorage.setItem('total',total)
+})
+
+dataSaveBtn.addEventListener('click',()=>{
     
     let CusName = customerName.value;
     let CusNumber = customerNumber.value;
@@ -251,31 +257,15 @@ dataSaveBtn.addEventListener('click',()=>{
     customerName.value = '';
     customerNumber.value = '';
     hisab.value = '';
-})
-customerName.addEventListener('input',()=>{
-    if (customerName.value !== '' && customerNumber.value !== '' && hisab.value !== ''){
-        dataSaveBtn.classList.add('dataSaveBtn');
-
-    }
-    else{
-        dataSaveBtn.classList.remove('dataSaveBtn');
-    }
 });
-customerNumber.addEventListener('input',()=>{
-    if (customerName.value !== '' && customerNumber.value !== '' && hisab.value !== ''){
-        dataSaveBtn.classList.add('dataSaveBtn');
 
-    }
-    else{
-        dataSaveBtn.classList.remove('dataSaveBtn');
-    }
-});
-hisab.addEventListener('input',()=>{
-    if (customerName.value !== '' && customerNumber.value !== '' && hisab.value !== ''){
-        dataSaveBtn.classList.add('dataSaveBtn');
 
-    }
-    else{
-        dataSaveBtn.classList.remove('dataSaveBtn');
-    }
+
+
+let number =['19','80','50','64'];
+let parseNumber = parseFloat(number)
+
+const sum = number.reduce((pre,curre)=>{
+    return pre + curre;
 });
+console.log(parseNumber);

@@ -1321,10 +1321,6 @@ body {
     display: block;
     margin: auto;
     opacity: 0.6;
-    pointer-events: none;
-  }
-  .data_save_btn .dataSaveBtn {
-    pointer-events: all;
     opacity: 1;
   }
   .calculator {
