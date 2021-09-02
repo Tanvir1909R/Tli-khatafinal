@@ -126,7 +126,7 @@ const ownerName = document.querySelector('.Name');
 
 window.addEventListener('load',()=>{
 
-    if(localStorage.getItem('Name') != undefined){
+    if(localStorage.getItem('Name') != undefined && localStorage.getItem('Pin')){
         registerSec.setAttribute('style','display:none');
         homePage.setAttribute('style','top:0px;');
     }
@@ -233,11 +233,10 @@ const customerNumber = document.querySelector('.customer_number');
 const hisab = document.querySelector('.display');
 const dataSaveBtn = document.querySelector('.dataSave')
 
-
 dataSaveBtn.addEventListener('click',()=>{
-    let total = hisab.value
-
-    localStorage.setItem('total',total)
+    let data = parseFloat(hisab.value);
+    let store = JSON.parse(localStorage.getItem('Total'));
+    localStorage.setItem('Total',data += store);
 })
 
 dataSaveBtn.addEventListener('click',()=>{
@@ -254,18 +253,9 @@ dataSaveBtn.addEventListener('click',()=>{
     }
     noteObj.push('Customer Name: '+CusName , 'customer Number: '+CusNumber , 'Taka: '+cal)
     localStorage.setItem('CustomerData',JSON.stringify(noteObj));
-    customerName.value = '';
-    customerNumber.value = '';
-    hisab.value = '';
-});
+})
 
 
 
 
-let number =['19','80','50','64'];
-let parseNumber = parseFloat(number)
 
-const sum = number.reduce((pre,curre)=>{
-    return pre + curre;
-});
-console.log(parseNumber);
