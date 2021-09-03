@@ -188,6 +188,8 @@ addCustomerBtn.addEventListener('click',()=>{
 customer_sec_back.addEventListener('click',()=>{
     addCustomerSec.classList.remove('add_customer_sec_active');
     calculator.classList.remove('calculator_active');
+    displayValue= '';
+    Display.value = ''
 })
 
 cal_active.addEventListener('click',()=>{
@@ -237,6 +239,16 @@ dataSaveBtn.addEventListener('click',()=>{
     let data = parseFloat(hisab.value);
     let store = JSON.parse(localStorage.getItem('Total'));
     localStorage.setItem('Total',data += store);
+
+    takaPabo.innerHTML = localStorage.getItem('Total');
+
+    if(localStorage.getItem('Total') == null){
+        takaPabo.innerHTML = 00;
+    }
+    else{
+        localStorage.getItem('Total');
+    }
+    
 })
 
 dataSaveBtn.addEventListener('click',()=>{
@@ -253,9 +265,45 @@ dataSaveBtn.addEventListener('click',()=>{
     }
     noteObj.push('Customer Name: '+CusName , 'customer Number: '+CusNumber , 'Taka: '+cal)
     localStorage.setItem('CustomerData',JSON.stringify(noteObj));
+    
+    takaPabo.innerHTML = localStorage.getItem('Total');
+
+    if(localStorage.getItem('Total') == null){
+        takaPabo.innerHTML = 00;
+    }
+    else{
+        localStorage.getItem('Total');
+    }
+
+    if(localStorage.getItem('Total') !== null){
+        taliPage.setAttribute('style','display:block');
+        bodyWrapper.setAttribute('style','display:none');
+    
+    }
+    else{
+        taliPage.setAttribute('style','display:none');
+        bodyWrapper.setAttribute('style','display:block');
+    }
 })
 
 
 
+// ----------------------------------display customer data---------------------------------------------//
+const takaPabo = document.querySelector('.taka_pabo');
+const taliPage = document.querySelector('.tali_page');
+const bodyWrapper = document.querySelector('.body_wrapper')
+
+
+takaPabo.innerHTML = localStorage.getItem('Total');
+
+if(localStorage.getItem('Total') !== null){
+    taliPage.setAttribute('style','display:block');
+    bodyWrapper.setAttribute('style','display:none');
+
+}
+else{
+    taliPage.setAttribute('style','display:none');
+    bodyWrapper.setAttribute('style','display:block');
+}
 
 
