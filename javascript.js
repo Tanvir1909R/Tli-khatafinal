@@ -189,7 +189,9 @@ customer_sec_back.addEventListener('click',()=>{
     addCustomerSec.classList.remove('add_customer_sec_active');
     calculator.classList.remove('calculator_active');
     displayValue= '';
-    Display.value = ''
+    Display.value = '';
+    customerName.value = '';
+    customerNumber.value = '';
 })
 
 cal_active.addEventListener('click',()=>{
@@ -235,7 +237,23 @@ const customerNumber = document.querySelector('.customer_number');
 const hisab = document.querySelector('.display');
 const dataSaveBtn = document.querySelector('.dataSave')
 
+const customer = JSON.parse(localStorage.getItem('CustomerList')) || [];
+
+const addCustomers = (customerName , Taka,customerNumber )=>{
+    
+    customer.push({customerName,Taka,customerNumber});
+    localStorage.setItem('CustomerList',JSON.stringify(customer));
+};
+
 dataSaveBtn.addEventListener('click',()=>{
+
+    let name = customerName.value;
+    let number = customerNumber.value;
+    let pamu = hisab.value;
+
+    addCustomers(name , pamu , number);
+
+
     let data = parseFloat(hisab.value);
     let store = JSON.parse(localStorage.getItem('Total'));
     localStorage.setItem('Total',data += store);
@@ -248,25 +266,7 @@ dataSaveBtn.addEventListener('click',()=>{
     else{
         localStorage.getItem('Total');
     }
-    
-})
 
-dataSaveBtn.addEventListener('click',()=>{
-    
-    let CusName = customerName.value;
-    let CusNumber = customerNumber.value;
-    let cal = hisab.value;
-    let customerData = localStorage.getItem('CustomerData');
-    if (customerData == null){
-        noteObj = [];
-    }
-    else{
-        noteObj = JSON.parse(customerData)
-    }
-    noteObj.push('Customer Name: '+CusName , 'customer Number: '+CusNumber , 'Taka: '+cal)
-    localStorage.setItem('CustomerData',JSON.stringify(noteObj));
-    
-    takaPabo.innerHTML = localStorage.getItem('Total');
 
     if(localStorage.getItem('Total') == null){
         takaPabo.innerHTML = 00;
@@ -284,7 +284,10 @@ dataSaveBtn.addEventListener('click',()=>{
         taliPage.setAttribute('style','display:none');
         bodyWrapper.setAttribute('style','display:block');
     }
+
+    
 })
+
 
 
 
@@ -305,5 +308,3 @@ else{
     taliPage.setAttribute('style','display:none');
     bodyWrapper.setAttribute('style','display:block');
 }
-
-
