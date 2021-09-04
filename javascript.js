@@ -123,6 +123,7 @@ nischitBtn.addEventListener('click',()=>{
 
 //-------------------------------------------------home page----------------------------------------------//
 const ownerName = document.querySelector('.Name');
+const footer = document.querySelector('.footer')
 
 window.addEventListener('load',()=>{
 
@@ -230,19 +231,45 @@ for (item of buttons){
     })
 };
 
-//=--------------------------------- ADD cutomer data in localStorage--------------------------------------=
+//=------------------------ ADD cutomer data in localStorage and display data ---------------------=
     
 const customerName = document.querySelector('.customer_name');
 const customerNumber = document.querySelector('.customer_number');
 const hisab = document.querySelector('.display');
-const dataSaveBtn = document.querySelector('.dataSave')
+const dataSaveBtn = document.querySelector('.dataSave');
+const customerAddSec = document.querySelector('.customer_sec')
 
 const customer = JSON.parse(localStorage.getItem('CustomerList')) || [];
+
+const creatCustomerElement = ({customerName , Taka}) =>{
+    let customerElement = 
+    `
+    <div class="list">
+        <div class="list_part-1">
+            <div class="loco">
+                <span>TR</span>
+            </div>
+        </div>
+        <div class="list_part-2">
+            <h4>${customerName}</h4>
+        </div>
+        <div class="list_part-3">
+            <div class="amount">
+                <h4>${Taka}</h4>
+                <i class="fas fa-angle-right"></i>
+            </div>
+        </div>
+    </div>
+    `;
+    customerAddSec.innerHTML += customerElement;
+}
+customer.forEach(creatCustomerElement)
 
 const addCustomers = (customerName , Taka,customerNumber )=>{
     
     customer.push({customerName,Taka,customerNumber});
     localStorage.setItem('CustomerList',JSON.stringify(customer));
+    return {customerName,Taka}
 };
 
 dataSaveBtn.addEventListener('click',()=>{
@@ -251,8 +278,8 @@ dataSaveBtn.addEventListener('click',()=>{
     let number = customerNumber.value;
     let pamu = hisab.value;
 
-    addCustomers(name , pamu , number);
-
+    let cD = addCustomers(name , pamu , number);
+    creatCustomerElement(cD)
 
     let data = parseFloat(hisab.value);
     let store = JSON.parse(localStorage.getItem('Total'));
