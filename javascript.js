@@ -263,6 +263,7 @@ const creatCustomerElement = ({customerName , Taka}) =>{
     `;
     customerAddSec.innerHTML += customerElement;
 }
+customer.forEach(creatCustomerElement)
 
 const addCustomers = (customerName , Taka,customerNumber )=>{
     
