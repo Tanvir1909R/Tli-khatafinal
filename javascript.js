@@ -290,6 +290,13 @@ dataSaveBtn.addEventListener('click',()=>{
 
 
 
+dataSaveBtn.addEventListener('click', () => {
+    Display.value = '';
+    customerName.value = '';
+    customerNumber.value = '';
+});
+
+
 
 // ----------------------------------display customer data---------------------------------------------//
 const takaPabo = document.querySelector('.taka_pabo');
