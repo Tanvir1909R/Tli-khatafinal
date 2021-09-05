@@ -247,7 +247,7 @@ const creatCustomerElement = ({customerName , Taka}) =>{
     <div class="list">
         <div class="list_part-1">
             <div class="loco">
-                <span>TR</span>
+                <span>TK</span>
             </div>
         </div>
         <div class="list_part-2">

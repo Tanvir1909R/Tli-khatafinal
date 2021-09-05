@@ -33,6 +33,7 @@
     width: 100%;
     padding-top: 35px;
     height: 100vh;
+    background-color: white;
   }
   .logo {
     width: 100%;
@@ -59,7 +60,7 @@
   .reg_input .st_input input {
     outline: none;
     border: 1.5px solid #ddd;
-    width: 295px;
+    width: 95%;
     height: 40px;
     border-radius: 19px;
     padding-left: 18px;
@@ -138,7 +139,7 @@
   .passwordSection .st_input input {
     outline: none;
     border: 1.5px solid #ddd;
-    width: 290px;
+    width: 95%;
     height: 40px;
     border-radius: 19px;
     padding-left: 18px;
@@ -618,12 +619,13 @@
     opacity: 1;
   }
   .footer {
+    width: 100%;
     background-color: #c4161c;
     color: white;
     padding-top: 15px;
     border-top-left-radius: 19px;
     border-top-right-radius: 19px;
-    position: fixed;
+    position: absolute;
     bottom: 0px;
     z-index: 1;
   }
@@ -822,7 +824,7 @@
   .input_data .data_input1 input {
     outline: none;
     border: 1.5px solid #ddd;
-    width: 290px;
+    width: 95%;
     height: 40px;
     border-radius: 19px;
     padding-left: 18px;
@@ -878,6 +880,9 @@
     margin-top: 40%;
     visibility: hidden;
     pointer-events: none;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
   .calculator .cal_column {
     display: -webkit-box;

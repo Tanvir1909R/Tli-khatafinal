@@ -79,6 +79,7 @@
         width: 100%;
         padding-top: 35px;
         height: 100vh;
+        background-color: white;
     }
 
     .logo {
@@ -103,7 +104,7 @@
             position: relative;
             margin-bottom: 20px;
             input {
-                @include inputStyle(295px);
+                @include inputStyle(95%);
             }
             span {
                 @include inputSpanDtyle()
@@ -150,7 +151,7 @@
             margin-bottom: 20px;
             margin-left: 15px;
             input {
-                @include inputStyle(290px);
+                @include inputStyle(95%);
             }
             i {
                 position: absolute;
@@ -537,12 +538,13 @@
         }
     }
     .footer {
+        width: 100%;
         background-color: #c4161c;
         color: white;
         padding-top: 15px;
         border-top-left-radius: 19px;
         border-top-right-radius: 19px;
-        position: fixed;
+        position: absolute;
         bottom: 0px;
         z-index: 1;
         .footer_wrapper {
@@ -712,7 +714,7 @@
             margin-bottom: 20px;
             text-align: center;
             input{
-                @include inputStyle(290px)
+                @include inputStyle(95%)
             }
             span{
                 @include inputSpanDtyle()
@@ -734,6 +736,7 @@
         margin-top: 40%;
         visibility: hidden;
         pointer-events: none;
+        justify-content: center;
         .cal_column{
             display: flex;
             flex-direction: column;
