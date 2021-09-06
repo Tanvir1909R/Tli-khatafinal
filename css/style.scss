@@ -389,7 +389,7 @@
 
 
     .home_body {
-        width: 280px;
+        width: 78%;
         margin: auto;
     }
     .body_wrapper {
@@ -754,6 +754,9 @@
     }.calculator_active{
         visibility: visible;
         pointer-events: all;
+    }
+    .sapliarDiv{
+        display:none;
     }
 }
 
@@ -1457,6 +1460,9 @@
     }.calculator_active{
         visibility: visible;
         pointer-events: all;
+    }
+    .sapliarDiv{
+        display:none;
     }
 }
 

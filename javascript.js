@@ -312,6 +312,15 @@ dataSaveBtn.addEventListener('click',()=>{
         bodyWrapper.setAttribute('style','display:block');
     }
 
+    dataSaveBtn.setAttribute('style','pointer-events:all')
+
+    if (name && number && pamu){
+        dataSaveBtn.setAttribute('style','pointer-events:all');
+    }
+    else{
+        dataSaveBtn.setAttribute('style','pointer-events:none');
+    }
+
     
 })
 
@@ -321,6 +330,7 @@ dataSaveBtn.addEventListener('click', () => {
     Display.value = '';
     customerName.value = '';
     customerNumber.value = '';
+
 });
 
 
@@ -342,3 +352,29 @@ else{
     taliPage.setAttribute('style','display:none');
     bodyWrapper.setAttribute('style','display:block');
 }
+
+
+
+// -----------------------------------------------= sapliar =------------------------------------------
+
+const costomerOp = document.querySelector('.add_part1');
+const costomerOpInput = document.querySelector('.input_data')
+const sapliar = document.querySelector('.add_part2');
+const sapliarInput = document.querySelector('.sapliarDiv');
+const saplaiarBtnDiv = document.querySelector('.saplaiarBtnDiv');
+const data_save_btn = document.querySelector('.data_save_btn')
+
+costomerOp.addEventListener('click',()=>{
+    costomerOpInput.setAttribute('style','display:block');
+    sapliarInput.setAttribute('style','display:none');
+});
+
+sapliar.addEventListener('click',()=>{
+    sapliarInput.setAttribute('style','display:block');
+    costomerOpInput.setAttribute('style','display:none');
+})
+
+// ------------------------------------= sapliar data in local storage =------------------------------
+
+
+
